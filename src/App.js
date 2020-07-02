@@ -230,7 +230,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename={ process.env.PUBLIC_URL }>
       <CssBaseline />
       <GameSelector open={open} onClose={handleClose} />
       <AppBar position="sticky">
