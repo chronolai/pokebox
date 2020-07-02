@@ -128,13 +128,14 @@ function Box(props) {
 function Computer(props) {
   let { pokedexId } = useParams();
   const { search } = props;
+  const dex = pokedex[pokedexId || 'national'];
 
   return (
     <Grid container justify="center" alignItems="center" direction="column">
       {
-        Array.from(Array(Math.ceil(pokedex[pokedexId].length / 30)).keys()).map((i) => {
+        Array.from(Array(Math.ceil(dex.length / 30)).keys()).map((i) => {
           const offset = 30 * i;
-          const ids = pokedex[pokedexId].slice(offset, offset + 30);
+          const ids = dex.slice(offset, offset + 30);
           return (
             <Grid item key={i}>
               <Box index={i + 1} ids={ids} search={search} />
@@ -261,6 +262,9 @@ function App() {
       <Container>
         <Switch>
           <Route path="/:pokedexId">
+            <Computer search={name} />
+          </Route>
+          <Route path="/">
             <Computer search={name} />
           </Route>
         </Switch>
