@@ -83,6 +83,9 @@ const useStyles = makeStyles(theme => ({
     transition: theme.transitions.create('width'),
     width: '100%',
   },
+  tac: {
+    textAlign: 'center',
+  },
 }));
 
 function Box(props) {
@@ -94,8 +97,8 @@ function Box(props) {
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography variant="h5" component="h2">
-          Box{index}: {pad(min)}~{pad(max)}
+        <Typography variant="h5" component="h2" className={classes.tac}>
+          {pad(min)}~{pad(max)}
         </Typography>
         <Grid container spacing={0} className={classes.grid}>
           {
