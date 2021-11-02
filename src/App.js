@@ -10,7 +10,7 @@ import {
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Container from '@material-ui/core/Container';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { alpha, makeStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -54,9 +54,9 @@ const useStyles = makeStyles(theme => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
     marginLeft: 0,
     width: '100%',
@@ -131,7 +131,7 @@ function Computer(props) {
   const dex = pokedex[pokedexId || 'national'];
 
   return (
-    <Grid container justify="center" alignItems="center" direction="column">
+    <Grid container justifyContent="center" alignItems="center" direction="column">
       {
         Array.from(Array(Math.ceil(dex.length / 30)).keys()).map((i) => {
           const offset = 30 * i;
@@ -169,45 +169,46 @@ function GameSelector(props) {
         <tbody>
           <tr>
             <td>關都</td>
-            <td colSpan="8"><AreaLink label="RGBY" to="/rgby" /></td>
-            <td colSpan="8"><AreaLink label="FRLG" to="/frlg" /></td>
-            <td colSpan="8"><AreaLink label="LGPE" to="/lgpe" /></td>
+            <td><AreaLink label="RGBY" to="/rgby" /></td>
+            <td><AreaLink label="FRLG" to="/frlg" /></td>
+            <td><AreaLink label="LGPE" to="/lgpe" /></td>
           </tr>
           <tr>
             <td>城都</td>
-            <td colSpan="12"><AreaLink label="GSC" to="/gsc" /></td>
-            <td colSpan="12"><AreaLink label="HGSS" to="/hgss" /></td>
+            <td><AreaLink label="GSC" to="/gsc" /></td>
+            <td><AreaLink label="HGSS" to="/hgss" /></td>
           </tr>
           <tr>
             <td>豐緣</td>
-            <td colSpan="12"><AreaLink label="RSE" to="/rse" /></td>
-            <td colSpan="12"><AreaLink label="ORAS" to="/oras" /></td>
+            <td><AreaLink label="RSE" to="/rse" /></td>
+            <td><AreaLink label="ORAS" to="/oras" /></td>
           </tr>
           <tr>
             <td>神奧</td>
-            <td colSpan="12"><AreaLink label="DP" to="/dp" /></td>
-            <td colSpan="12"><AreaLink label="Pt" to="/pt" /></td>
+            <td><AreaLink label="DP" to="/dp" /></td>
+            <td><AreaLink label="Pt" to="/pt" /></td>
           </tr>
           <tr>
             <td>合眾</td>
-            <td colSpan="12"><AreaLink label="BW" to="/bw" /></td>
-            <td colSpan="12"><AreaLink label="B2W2" to="/b2w2" /></td>
+            <td><AreaLink label="BW" to="/bw" /></td>
+            <td><AreaLink label="B2W2" to="/b2w2" /></td>
           </tr>
           <tr>
             <td>卡洛斯</td>
-            <td colSpan="8"><AreaLink label="Coastal" to="/xy_coastal" /></td>
-            <td colSpan="8"><AreaLink label="Central" to="/xy_central" /></td>
-            <td colSpan="8"><AreaLink label="Mountain" to="/xy_mountain" /></td>
+            <td><AreaLink label="Coastal" to="/xy_coastal" /></td>
+            <td><AreaLink label="Central" to="/xy_central" /></td>
+            <td><AreaLink label="Mountain" to="/xy_mountain" /></td>
           </tr>
           <tr>
             <td>阿羅拉</td>
-            <td colSpan="12"><AreaLink label="SM" to="/sm" /></td>
-            <td colSpan="12"><AreaLink label="USUM" to="/usum" /></td>
+            <td><AreaLink label="SM" to="/sm" /></td>
+            <td><AreaLink label="USUM" to="/usum" /></td>
           </tr>
           <tr>
             <td>伽勒爾</td>
-            <td colSpan="12"><AreaLink label="SWSH" to="/swsh" /></td>
-            <td colSpan="12"><AreaLink label="ARMOR" to="/swsh_armor" /></td>
+            <td><AreaLink label="SWSH" to="/swsh" /></td>
+            <td><AreaLink label="ARMOR" to="/swsh_armor" /></td>
+            <td><AreaLink label="CROWN" to="/swsh_crown" /></td>
           </tr>
         </tbody>
       </table>

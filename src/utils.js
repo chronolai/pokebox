@@ -1,7 +1,7 @@
 import pokemon from './pokemon';
 
 export function pad(index) {
-    return index.toString().padStart(3, 0);
+  return index.toString().padStart(3, 0);
 };
 
 export function findPokemon(idx) {
